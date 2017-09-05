@@ -1,28 +1,52 @@
----
-layout: default
-title: The DANE fail list, domains that fail with DANE verification
----
-<p>
-  DANE is a standard that allows TLS certificates to be bound to DNS names using DNSSEC.
-  As of today (2017), one of its most prominent uses is for email; bringing transport
-  encryption to SMTP. A few major MTAs (such as Postfix, Cloudmark and Halon) supports
-  it, and a growing number of domains are being signed.
-</p>
-<p>
-  If domain is DNSSEC-signed, but its DNS server fail to give proper answers in response
-  to TLSA queries, email delivery to this domain will fail for senders using DANE. The
-  most common problem is servers responding with SERVFAIL.
-</p>
-<p>
-  This is a verified list of DNSSEC-signed domains, which doesn't give proper TLSA
-  responses, and therefore needs to be excluded from DANE verification, in order to have
-  email delivered to them.
-</p>
-<p>
-  You can suggest additions/updates by creating pull requests on
-  <a href="https://github.com/danefail/list/">GitHub</a>.
-</p>
-<p>
-  This list is maintained and used by several organisations, and the domain name
-  is under the administration of <a href="https://wiki.halon.se">Halon</a>.
-</p>
+<html>
+<head>
+<title>The DANE fail list - Domains that fail with DANE verification</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+	<p>
+	<div class="row">
+		<div class="col-10">
+			<h1>The DANE fail list</h1>
+		</div>
+		<div class="col-2">
+		<div class="pull-right">
+			<p><a class="btn btn-primary btn-lg" href="https://danefail.org/list/dane_fail_list.dat" role="button">Get the list &raquo;</a></p>	
+		</div>
+		</div>
+	</div>
+	</p>
+	<p>
+	  DANE is a standard that allows TLS certificates to be bound to DNS names using DNSSEC.
+	  As of today (2017), one of its most prominent uses is for email; bringing transport
+	  encryption to SMTP. A few major MTAs (such as Postfix, Cloudmark and Halon) supports
+	  it, and a growing number of domains are being signed.
+	</p>
+	<p>
+	  If domain is DNSSEC-signed, but its DNS server fail to give proper answers in response
+	  to TLSA queries, email delivery to this domain will fail for senders using DANE. The
+	  most common problem is servers responding with SERVFAIL.
+	</p>
+	<p>
+	  This is a verified list of DNSSEC-signed domains, which doesn't give proper TLSA
+	  responses, and therefore needs to be excluded from DANE verification, in order to have
+	  email delivered to them.
+	</p>
+	<h4>Implementations</h4>
+	<p>
+		<ul>
+			<li><a href="https://github.com/danefail/list/blob/master/tools/dane_fail_postfix">Postfix</a> (smtp_tls_policy_maps)</li>	
+			<li><a href="https://github.com/danefail/list/blob/master/tools/halon">Halon</a> (pre-delivery script)</li>	
+		</ul>	
+	</p>
+	<h4>Maintenance</h4>
+	<p>
+	  This list is maintained and used by several organisations, and the domain name
+	  is as of now under the administration of <a href="https://wiki.halon.se">Halon</a>.
+	  You can suggest additions/updates by creating pull requests on
+	  <a href="https://github.com/danefail/list/">GitHub</a>.
+	</p>
+	</div>
+</body>
+</html>

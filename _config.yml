@@ -1,6 +1,0 @@
-theme: jekyll-theme-hacker
-name: The DANE fail list
-title: The DANE fail list
-description: List of domains that fail with DANE verification
-gems:
-  - jekyll-redirect-from
